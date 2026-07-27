@@ -2,7 +2,8 @@ type Estado = "prototipo" | "en-desarrollo" | "finalizado" | "pausado" | "invest
 type Tipo = "software" | "videojuego" | "innovacion-social" | "electronica" | "investigacion" | "privado" | "experimento";
 type Visibilidad = "publico" | "parcial" | "privado";
 
-export interface Proyecto {
+export interface Proyecto 
+{
   titulo: string;
   banner: string;
   descripcion: string;
