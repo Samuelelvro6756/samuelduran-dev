@@ -6,3 +6,13 @@ export const etiquetasEstado: Record<string, string> = {
   "investigacion": "Investigación",
   "produccion": "Producción",
 };
+
+export const etiquetasTipo: Record<string, string> = {
+  "software": "Software",
+  "videojuego": "Videojuego",
+  "innovacion-social": "Innovación social",
+  "electronica": "Electrónica",
+  "investigacion": "Investigación",
+  "privado": "Privado",
+  "experimento": "Experimento",
+};

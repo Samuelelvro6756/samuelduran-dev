@@ -1,9 +1,11 @@
 import Link from "next/link"
+import Image from "next/image"
+
 export default function Header() {
   return (
     <header>
       <div className="flex items-center justify-between px-1 py-4 max-w-7xl mx-auto">
-        <span className="font-semibold text-lg">Samuel Duran</span>
+        <Image className="invert brightness-200" src="/branding/wordmark.png" alt="Samuel Durán" width={200} height={32} priority />
         <nav className="flex gap-6">
             <Link href="/">Inicio</Link>
             <Link href="/proyectos">Proyectos</Link>

@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Samuel Duran - Desarrollador de Software",
-  description: "Portafolio de Samuel Duran: proyectos, arquitectura y desarrollo.",
+  title: "Samuel Durán - Desarrollador de Software",
+  description: "Portafolio de Samuel Durán: proyectos, arquitectura y desarrollo.",
 };
 
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>)

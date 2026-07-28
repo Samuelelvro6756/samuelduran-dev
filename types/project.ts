@@ -19,11 +19,11 @@ export interface Proyecto
   };
   impacto: {
     problema: string;
-    decisionTecnicaClave: string;
     resultado: string;
     aprendizaje: string;
   };
   devHub?: {
+    decisionTecnicaClave: string;
     arquitectura?: string;
     diagramas?: string[];
     galeria?: string[];
