@@ -7,7 +7,7 @@ export async function POST(request: Request) {
 
   try {
     await resend.emails.send({
-      from: "Nuevo Mensaje de Portafolio <onboarding@resend.dev>",
+      from: "Portafolio <onboarding@resend.dev>",
       to: "samuelducar1998@gmail.com",
       subject: `Nuevo mensaje de ${nombre}`,
       replyTo: email,
