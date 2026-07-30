@@ -67,7 +67,7 @@ export const proyectos: Proyecto[] = [
       ],
       readme: "https://github.com/Samuelelvro6756/WindowTale/blob/main/README.md",
       descargas: [ 
-        "https://github.com/Samuelelvro6756/WindowTale/releases", 
+        { nombre: "Portal de Lanzamientos", url: "https://github.com/Samuelelvro6756/WindowTale/releases", }, 
       ],
     },
   },
@@ -124,7 +124,7 @@ export const proyectos: Proyecto[] = [
       ],
       readme: "https://github.com/Samuelelvro6756/Registro-de-Etapa-Productiva/blob/main/README.md",
       descargas: [
-        "https://github.com/Samuelelvro6756/Registro-de-Etapa-Productiva/releases",
+        { nombre: "Portal de Lanzamientos", url: "https://github.com/Samuelelvro6756/Registro-de-Etapa-Productiva/releases", },
       ],
     },
   },
@@ -149,7 +149,9 @@ export const proyectos: Proyecto[] = [
     devHub: 
     {
       decisionTecnicaClave: "Recuperar el control de la arquitectura antes de añadir contenido nuevo, priorizando un MVP/Vertical Slice sólido.",
-      descargas: ["/proyectos/ultimate-power-chess/GCD.pdf"],
+      descargas: [
+        { nombre: "Documento de concepto y diseño de juego (GCD)", url: "/proyectos/ultimate-power-chess/GCD.pdf" },
+      ],
     },
   },
 ];

@@ -28,7 +28,7 @@ export interface Proyecto
     diagramas?: string[];
     galeria?: string[];
     readme?: string;
-    descargas?: string[];
+    descargas?: { nombre: string; url: string }[];
   };
 
 }

@@ -1,7 +1,8 @@
 import Image from "next/image"
+import DevHubToggle from "@/components/DevHubToggle";
 import { etiquetasEstado, etiquetasTipo } from "@/lib/labels";
-import { proyectos } from "@/data/projects";
 import { generarSlug } from "@/lib/slug";
+import { proyectos } from "@/data/projects";
 
 export default async function ProyectoDetallePage({ params, }: { params: Promise<{ slug: string }>; }) {
   const { slug } = await params;
@@ -12,7 +13,7 @@ export default async function ProyectoDetallePage({ params, }: { params: Promise
   }
 
   return (
-    <main className="p-8 max-w-2xl mx-auto">
+    <main className="p-8 max-w-4xl mx-auto">
       <div className="flex items-center gap-1 mt-2 pb-2">
         <span className="text-xs uppercase font-semibold text-gray-500">{etiquetasEstado[proyecto.estado]}</span>
         <span className="text-xs text-gray-500">·</span>
@@ -56,6 +57,68 @@ export default async function ProyectoDetallePage({ params, }: { params: Promise
           </a>
         )}
       </div>
+        
+      {proyecto.devHub && (
+        <DevHubToggle>
+          {proyecto.devHub.decisionTecnicaClave && (
+            <div className="mb-4">
+              <h3 className="text-sm uppercase text-gray-500 font-semibold">Decisión técnica clave</h3>
+              <p className="text-gray-300 mt-1">{proyecto.devHub.decisionTecnicaClave}</p>
+            </div>
+          )}
+          
+          {proyecto.devHub.arquitectura && (
+            <div className="mb-4 pt-4">
+              <h3 className="text-sm uppercase text-gray-500 font-semibold">Arquitectura</h3>
+              <p className="text-gray-300 mt-1">{proyecto.devHub.arquitectura}</p>
+            </div>
+          )}
+
+          {proyecto.devHub.diagramas && proyecto.devHub.diagramas.length > 0 && (
+            <div className="mb-4 pt-4">
+              <h3 className="text-sm uppercase text-gray-500 font-semibold mb-2">Diagramas</h3>
+              <div className="grid grid-cols-2 gap-2">
+                {proyecto.devHub.diagramas.map((url) => (
+                  <img key={url} src={url} alt="Diagrama" className="rounded" />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {proyecto.devHub.galeria && proyecto.devHub.galeria.length > 0 && (
+            <div className="mb-4 pt-4">
+              <h3 className="text-sm uppercase text-gray-500 font-semibold mb-2">Galería</h3>
+              <div className="grid grid-cols-2 gap-2">
+                {proyecto.devHub.galeria.map((url) => (
+                  <img key={url} src={url} alt="Galería" className="rounded" />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {proyecto.devHub.readme && (
+            <div className="mb-4 pt-4">
+              <h3 className="text-sm uppercase text-gray-500 font-semibold mb-2">Read me</h3>
+              <a href={proyecto.devHub.readme} target="_blank" rel="noopener noreferrer" className="text-sm underline block">
+                README.md
+              </a>
+            </div>
+          )}
+
+         {proyecto.devHub?.descargas && proyecto.devHub.descargas.length > 0 && (
+            <div className="mt-4 pt-4">
+              <h3 className="text-sm uppercase text-gray-500 font-semibold mb-2">Descargas</h3>
+              <div className="flex flex-col gap-1">
+                {proyecto.devHub.descargas.map((descarga) => (
+                  <a key={descarga.url} href={descarga.url} target="_blank" rel="noopener noreferrer" className="text-sm underline">
+                    {descarga.nombre}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </DevHubToggle>
+      )}
     </main>
   );
 }
