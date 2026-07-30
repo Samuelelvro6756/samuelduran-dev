@@ -40,64 +40,6 @@ export const proyectos: Proyecto[] = [
     },
   },
   {
-    titulo: "WindowTale",
-    banner: "https://github.com/Samuelelvro6756/WindowTale/raw/main/docs/banner.png",
-    descripcion: "Bullet hell 2D donde tu escritorio es el campo de batalla: esquivas ataques de huesos con mecánicas de color y fragmentación sobre una ventana transparente, inspirado en Undertale y Just Shapes & Beats.",
-    tecnologias: ["Unity", "C#"],
-    estado: "finalizado",
-    tipo: "videojuego",
-    visibilidad: "publico",
-    enlaces: {
-      github: "https://github.com/Samuelelvro6756/WindowTale",
-      itch: "https://samuel-duran-cardenas.itch.io/windowtale",
-    },
-    impacto: {
-      problema: "Explorar una mecánica poco común: usar el propio escritorio del SO como parte del escenario de juego.",
-      resultado: "Diseñé el concepto de un Bullet Hell donde el escritorio del sistema operativo se convierte en parte del escenario mediante una ventana transparente, experimentando con nuevas mecánicas inspiradas en Undertale y otros juegos del género.",
-      aprendizaje: "Aprendí a transformar una idea creativa en un prototipo técnico, explorando mecánicas no convencionales y comprendiendo el equilibrio entre innovación, viabilidad técnica y experiencia del jugador.",
-    },
-    devHub: {
-      decisionTecnicaClave: "Uso de una ventana transparente para integrar el entorno real del usuario en la jugabilidad.",
-      arquitectura: "Proyecto Unity organizado con la estructura estándar del motor (Assets/Scripts, Scenes, Prefabs, Sprites, Audio). El componente técnico central es la integración con una ventana transparente del sistema operativo, que permite renderizar el juego directamente sobre el escritorio de Windows en vez de en una ventana contenida tradicional.",
-      galeria: [
-        "https://github.com/Samuelelvro6756/WindowTale/raw/main/docs/gifs/survive.gif",
-        "https://github.com/Samuelelvro6756/WindowTale/raw/main/docs/gifs/dash.gif",
-        "https://github.com/Samuelelvro6756/WindowTale/raw/main/docs/gifs/wrap.gif",
-        "https://github.com/Samuelelvro6756/WindowTale/raw/main/docs/gifs/difficult.gif",
-      ],
-      readme: "https://github.com/Samuelelvro6756/WindowTale/blob/main/README.md",
-      descargas: [ 
-        { nombre: "Portal de Lanzamientos", url: "https://github.com/Samuelelvro6756/WindowTale/releases", }, 
-      ],
-    },
-  },
-  {
-    titulo: "PinScope",
-    banner: "https://github.com/Samuelelvro6756/PinScope/raw/main/docs/banner.png",
-    descripcion: "Plataforma experimental para la identificación y visualización interactiva de pinouts de ECUs automotrices.",
-    tecnologias: ["HTML5", "CSS3", "JavaScript"],
-    estado: "investigacion",
-    tipo: "software",
-    visibilidad: "publico",
-    enlaces: {
-      github: "https://github.com/Samuelelvro6756/PinScope",
-    },
-    impacto: {
-      problema: "La información técnica sobre ECUs automotrices suele encontrarse dispersa, dificultando la identificación rápida de conexiones, pines y configuraciones específicas.",
-      resultado: "Desarrollé un prototipo inicial orientado a centralizar información técnica y sentar las bases de una futura plataforma inteligente asistida por IA para consulta automotriz.",
-      aprendizaje: "Comprendí la importancia de validar primero la idea de un producto antes de escalarlo, diseñando una arquitectura que permita evolucionar un prototipo hacia una solución mucho más ambiciosa.",
-    },
-    devHub: {
-      decisionTecnicaClave: "Validar la experiencia de usuario con una única ECU documentada manualmente antes de construir una arquitectura escalable con base de datos.",
-      arquitectura: "Arquitectura actual: HTML/CSS/JS con una ECU estática embebida, sin base de datos. Evolución prevista: usuario → reconocimiento por IA o búsqueda manual → base de datos centralizada → ficha técnica con pinout, diagramas, voltajes y diagnóstico.",
-      galeria: [
-        "https://github.com/Samuelelvro6756/PinScope/raw/main/docs/show1.png",
-        "https://github.com/Samuelelvro6756/PinScope/raw/main/docs/show2.png",
-      ],
-      readme: "https://github.com/Samuelelvro6756/PinScope/blob/main/README.md",
-    },
-  },
-  {
     titulo: "Aplicativo Web de Gestión y Control de Pasantías",
     banner: "https://github.com/Samuelelvro6756/Registro-de-Etapa-Productiva/raw/main/docs/Banner.png",
     descripcion: "Sistema web para gestionar estudiantes, pasantías, contratos de aprendizaje, asesorías y evaluaciones desde una única plataforma.",
@@ -151,6 +93,64 @@ export const proyectos: Proyecto[] = [
       decisionTecnicaClave: "Recuperar el control de la arquitectura antes de añadir contenido nuevo, priorizando un MVP/Vertical Slice sólido.",
       descargas: [
         { nombre: "Documento de concepto y diseño de juego (GCD)", url: "/proyectos/ultimate-power-chess/GCD.pdf" },
+      ],
+    },
+  },
+  {
+    titulo: "PinScope",
+    banner: "https://github.com/Samuelelvro6756/PinScope/raw/main/docs/banner.png",
+    descripcion: "Plataforma experimental para la identificación y visualización interactiva de pinouts de ECUs automotrices.",
+    tecnologias: ["HTML5", "CSS3", "JavaScript"],
+    estado: "investigacion",
+    tipo: "software",
+    visibilidad: "publico",
+    enlaces: {
+      github: "https://github.com/Samuelelvro6756/PinScope",
+    },
+    impacto: {
+      problema: "La información técnica sobre ECUs automotrices suele encontrarse dispersa, dificultando la identificación rápida de conexiones, pines y configuraciones específicas.",
+      resultado: "Desarrollé un prototipo inicial orientado a centralizar información técnica y sentar las bases de una futura plataforma inteligente asistida por IA para consulta automotriz.",
+      aprendizaje: "Comprendí la importancia de validar primero la idea de un producto antes de escalarlo, diseñando una arquitectura que permita evolucionar un prototipo hacia una solución mucho más ambiciosa.",
+    },
+    devHub: {
+      decisionTecnicaClave: "Validar la experiencia de usuario con una única ECU documentada manualmente antes de construir una arquitectura escalable con base de datos.",
+      arquitectura: "Arquitectura actual: HTML/CSS/JS con una ECU estática embebida, sin base de datos. Evolución prevista: usuario → reconocimiento por IA o búsqueda manual → base de datos centralizada → ficha técnica con pinout, diagramas, voltajes y diagnóstico.",
+      galeria: [
+        "https://github.com/Samuelelvro6756/PinScope/raw/main/docs/show1.png",
+        "https://github.com/Samuelelvro6756/PinScope/raw/main/docs/show2.png",
+      ],
+      readme: "https://github.com/Samuelelvro6756/PinScope/blob/main/README.md",
+    },
+  },
+  {
+    titulo: "WindowTale",
+    banner: "https://github.com/Samuelelvro6756/WindowTale/raw/main/docs/banner.png",
+    descripcion: "Bullet hell 2D donde tu escritorio es el campo de batalla: esquivas ataques de huesos con mecánicas de color y fragmentación sobre una ventana transparente, inspirado en Undertale y Just Shapes & Beats.",
+    tecnologias: ["Unity", "C#"],
+    estado: "finalizado",
+    tipo: "videojuego",
+    visibilidad: "publico",
+    enlaces: {
+      github: "https://github.com/Samuelelvro6756/WindowTale",
+      itch: "https://samuel-duran-cardenas.itch.io/windowtale",
+    },
+    impacto: {
+      problema: "Explorar una mecánica poco común: usar el propio escritorio del SO como parte del escenario de juego.",
+      resultado: "Diseñé el concepto de un Bullet Hell donde el escritorio del sistema operativo se convierte en parte del escenario mediante una ventana transparente, experimentando con nuevas mecánicas inspiradas en Undertale y otros juegos del género.",
+      aprendizaje: "Aprendí a transformar una idea creativa en un prototipo técnico, explorando mecánicas no convencionales y comprendiendo el equilibrio entre innovación, viabilidad técnica y experiencia del jugador.",
+    },
+    devHub: {
+      decisionTecnicaClave: "Uso de una ventana transparente para integrar el entorno real del usuario en la jugabilidad.",
+      arquitectura: "Proyecto Unity organizado con la estructura estándar del motor (Assets/Scripts, Scenes, Prefabs, Sprites, Audio). El componente técnico central es la integración con una ventana transparente del sistema operativo, que permite renderizar el juego directamente sobre el escritorio de Windows en vez de en una ventana contenida tradicional.",
+      galeria: [
+        "https://github.com/Samuelelvro6756/WindowTale/raw/main/docs/gifs/survive.gif",
+        "https://github.com/Samuelelvro6756/WindowTale/raw/main/docs/gifs/dash.gif",
+        "https://github.com/Samuelelvro6756/WindowTale/raw/main/docs/gifs/wrap.gif",
+        "https://github.com/Samuelelvro6756/WindowTale/raw/main/docs/gifs/difficult.gif",
+      ],
+      readme: "https://github.com/Samuelelvro6756/WindowTale/blob/main/README.md",
+      descargas: [ 
+        { nombre: "Portal de Lanzamientos", url: "https://github.com/Samuelelvro6756/WindowTale/releases", }, 
       ],
     },
   },

@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function Header() {
   return (
-    <header>
+    <header className="sticky top-0 bg-black z-50">
       <div className="flex items-center justify-between px-1 py-4 max-w-7xl mx-auto">
         <Image className="invert brightness-200" src="/branding/wordmark.png" alt="Samuel Durán" width={200} height={32} priority />
         <nav className="flex gap-6">
