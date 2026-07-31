@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/components/Button";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactoSchema, ContactoFormData } from "@/lib/validaciones";
@@ -79,7 +80,7 @@ export default function ContactoPage() {
             type="text"
             autoComplete="off"
             tabIndex={-1}
-            className="absolute left-[9999px]"
+            className="absolute w-px h-px opacity-0 overflow-hidden pointer-events-none"
             aria-hidden="true"
           />
 
@@ -117,13 +118,9 @@ export default function ContactoPage() {
             )}
           </div>
 
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="bg-white text-black rounded px-4 py-2 mt-2 disabled:opacity-50"
-          >
+          <Button type="submit" disabled={isSubmitting} variant="primary">
             {isSubmitting ? "Enviando..." : "Enviar"}
-          </button>
+          </Button>
 
           {enviado && <p className="text-green-400 text-sm">Mensaje enviado correctamente.</p>}
           {error && <p className="text-red-400 text-sm">Hubo un error, intenta de nuevo.</p>}

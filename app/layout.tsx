@@ -1,6 +1,5 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import MosaicBackground from "@/components/MosaicBackground";
 import type { Metadata } from "next";
 import { Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -31,9 +30,8 @@ export default function RootLayout({
       className={`${manrope.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <MosaicBackground />
         <Header />
-        {children}
+        <div className="flex-1">{children}</div>
         <Footer />
       </body>
     </html>

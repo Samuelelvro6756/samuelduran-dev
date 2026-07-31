@@ -1,5 +1,5 @@
 type Estado = "prototipo" | "en-desarrollo" | "finalizado" | "pausado" | "investigacion" | "produccion";
-type Tipo = "software" | "videojuego" | "innovacion-social" | "electronica" | "investigacion" | "privado" | "experimento";
+type Tipo = "software" | "videojuego" | "innovacion-social" | "electronica" | "privado" | "experimento";
 type Visibilidad = "publico" | "parcial" | "privado";
 
 export interface Proyecto 
@@ -9,7 +9,7 @@ export interface Proyecto
   descripcion: string;
   tecnologias: string[];
   estado: Estado;
-  tipo: Tipo;
+  tipo: Tipo[];
   visibilidad: Visibilidad;
   enlaces: {
     github?: string;

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Button from "@/components/Button";
 
 export default function SobreMiPage() {
   return (
@@ -19,16 +20,12 @@ export default function SobreMiPage() {
           <p className="text-gray-300 mt-4">
             Estudiante de Ingeniería de Software, apasionado por construir cosas que 
             funcionen correctamente y se puedan mantenerse a largo plazo. Aprendo programando 
-            proyectos propios: desde videojuegos hasta sistemas embebidos, porque 
-            prefiero entender a fondo cómo funciona algo antes de darlo por terminado. 
+            proyectos creativos y personales. 
           </p>
           
-          <a href="/perfil/cv.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-4 text-sm underline">
+          <Button href="/perfil/cv.pdf" external variant="primary" className="mt-4">
             Descargar CV
-          </a>
+          </Button>
         </div>
       </div>
 

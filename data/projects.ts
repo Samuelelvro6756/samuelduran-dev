@@ -7,7 +7,7 @@ export const proyectos: Proyecto[] = [
     descripcion: "Sistema portátil de asistencia mediante sensores ultrasónicos y alertas multimodales, desarrollado con ESP32.",
     tecnologias: ["ESP32", "Arduino", "C++"],
     estado: "prototipo",
-    tipo: "innovacion-social",
+    tipo: ["innovacion-social", "electronica"],
     visibilidad: "publico",
     enlaces: {
       github: "https://github.com/Samuelelvro6756/Gafas-de-Proximidad-para-Invidentes",
@@ -45,7 +45,7 @@ export const proyectos: Proyecto[] = [
     descripcion: "Sistema web para gestionar estudiantes, pasantías, contratos de aprendizaje, asesorías y evaluaciones desde una única plataforma.",
     tecnologias: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
     estado: "finalizado",
-    tipo: "software",
+    tipo: ["software"],
     visibilidad: "publico",
     enlaces: {
       github: "https://github.com/Samuelelvro6756/Registro-de-Etapa-Productiva",
@@ -76,7 +76,7 @@ export const proyectos: Proyecto[] = [
     descripcion: "Reinterpretación del ajedrez tradicional que incorpora poderes, progresión y estrategia competitiva, desarrollado en Unity con un enfoque en arquitectura escalable y Live Service.",
     tecnologias: ["Unity", "C#", "ASP.NET"],
     estado: "en-desarrollo",
-    tipo: "videojuego",
+    tipo: ["videojuego", "privado"],
     visibilidad: "parcial",
     enlaces: 
     {
@@ -102,7 +102,7 @@ export const proyectos: Proyecto[] = [
     descripcion: "Plataforma experimental para la identificación y visualización interactiva de pinouts de ECUs automotrices.",
     tecnologias: ["HTML5", "CSS3", "JavaScript"],
     estado: "investigacion",
-    tipo: "software",
+    tipo: ["software", "experimento"],
     visibilidad: "publico",
     enlaces: {
       github: "https://github.com/Samuelelvro6756/PinScope",
@@ -128,7 +128,7 @@ export const proyectos: Proyecto[] = [
     descripcion: "Bullet hell 2D donde tu escritorio es el campo de batalla: esquivas ataques de huesos con mecánicas de color y fragmentación sobre una ventana transparente, inspirado en Undertale y Just Shapes & Beats.",
     tecnologias: ["Unity", "C#"],
     estado: "finalizado",
-    tipo: "videojuego",
+    tipo: ["videojuego", "experimento"],
     visibilidad: "publico",
     enlaces: {
       github: "https://github.com/Samuelelvro6756/WindowTale",

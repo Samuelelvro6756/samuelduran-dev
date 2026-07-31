@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { proyectos } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
+import Button from "@/components/Button";
 
 export default function Home() {
   const destacados = proyectos.slice(0, 3);
@@ -26,23 +27,18 @@ export default function Home() {
           como desarrollador.
         </p>
         <div className="flex justify-center gap-4 mt-6">
-          <a
-            href="/perfil/cv.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white text-black rounded px-4 py-2 text-sm"
-          >
+          <Button href="/perfil/cv.pdf" external variant="primary">
             Descargar CV
-          </a>
-          <Link href="/contacto" className="border rounded px-4 py-2 text-sm">
+          </Button>
+          <Button href="/contacto" variant="secondary">
             Contactar
-          </Link>
+          </Button>
         </div>
       </section>
 
       {/* Proyectos destacados */}
-      <section className="p-8 max-w-6xl mx-auto">
-        <h2 className="text-xl font-semibold mb-6">Proyectos destacados</h2>
+      <section className="p-8 max-w-7xl mx-auto">
+        <h2 className="text-xl font-semibold mb-6">Proyectos Destacados</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {destacados.map((proyecto) => (
             <ProjectCard key={proyecto.titulo} proyecto={proyecto} />

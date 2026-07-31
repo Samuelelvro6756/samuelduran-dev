@@ -1,6 +1,7 @@
 import Image from "next/image"
 import DevHubToggle from "@/components/DevHubToggle";
-import { etiquetasEstado, etiquetasTipo } from "@/lib/labels";
+import Badge from "@/components/Badge";
+import { etiquetasEstado, etiquetasTipo, coloresEstado, iconosEstado, iconosTipo } from "@/lib/labels";
 import { generarSlug } from "@/lib/slug";
 import { proyectos } from "@/data/projects";
 
@@ -15,9 +16,14 @@ export default async function ProyectoDetallePage({ params, }: { params: Promise
   return (
     <main className="p-8 max-w-4xl mx-auto">
       <div className="flex items-center gap-1 mt-2 pb-2">
-        <span className="text-xs uppercase font-semibold text-gray-500">{etiquetasEstado[proyecto.estado]}</span>
-        <span className="text-xs text-gray-500">·</span>
-        <span className="text-xs uppercase text-gray-500">{etiquetasTipo[proyecto.tipo]}</span>
+        <Badge colorClasses={coloresEstado[proyecto.estado]} icon={iconosEstado[proyecto.estado]}>
+          {etiquetasEstado[proyecto.estado]}
+        </Badge>
+        {proyecto.tipo.slice(0, 2).map((t) => (
+          <Badge key={t} colorClasses="bg-muted/15 text-muted border-muted/30" icon={iconosTipo[t]}>
+            {etiquetasTipo[t]}
+          </Badge>
+        ))}
       </div>
 
       <Image src={proyecto.banner} alt={proyecto.titulo} width={1200} height={630} className="w-full h-auto object-cover rounded"priority />
