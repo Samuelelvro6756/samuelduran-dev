@@ -1,32 +1,41 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import MosaicBackground from "@/components/MosaicBackground";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Samuel Durán - Desarrollador de Software",
+  title: "Samuel Durán — Desarrollador de Software",
   description: "Portafolio de Samuel Durán: proyectos, arquitectura y desarrollo.",
 };
 
-export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>)
-{
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${manrope.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col"><Header />{children}<Footer /></body>
+      <body className="min-h-full flex flex-col">
+        <MosaicBackground />
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

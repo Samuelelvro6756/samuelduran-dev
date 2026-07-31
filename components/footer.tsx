@@ -1,7 +1,7 @@
 // components/Footer.tsx
 export default function Footer() {
   return (
-    <footer className="p-6 border-t">
+    <footer className="p-6 bg-surface border-t border-white/5">
       <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-4 text-sm text-gray-400">
         <a href="mailto:samuelducar1998@gmail.com">Email</a>
         <a href="https://github.com/Samuelelvro6756" target="_blank" rel="noopener noreferrer">
