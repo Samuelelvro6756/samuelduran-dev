@@ -1,5 +1,25 @@
 import { CheckCircle2, Loader2, FlaskConical, PauseCircle, Search, Rocket, LucideIcon } from "lucide-react";
-import { Code2, Gamepad2, HeartHandshake, Cpu, Microscope, Lock, Beaker } from "lucide-react";
+import { Code2, Gamepad2, HeartHandshake, Cpu, Lock, Beaker } from "lucide-react";
+import { SiUnity, SiPhp, SiMysql, SiHtml5, SiCss, SiCplusplus, SiJavascript, SiTypescript, SiPython, SiArduino, SiGit, SiGithub, SiEspressif, SiDotnet} from "react-icons/si";
+import { IconType } from "react-icons";
+
+export const iconosTecnologia: Record<string, { icon: IconType; color: string }> = {
+  "Unity": { icon: SiUnity, color: "#FFFFFF" },
+  "ASP.NET": { icon: SiDotnet, color: "#9A73EF" },
+  "C#": { icon: SiCplusplus, color: "#9A73EF" },
+  "C++": { icon: SiCplusplus, color: "#5599FF" },
+  "PHP": { icon: SiPhp, color: "#777BB4" },
+  "MySQL": { icon: SiMysql, color: "#3E6E93" },
+  "HTML5": { icon: SiHtml5, color: "#E34F26" },
+  "CSS3": { icon: SiCss, color: "#1572B6" },
+  "JavaScript": { icon: SiJavascript, color: "#F7DF1E" },
+  "TypeScript": { icon: SiTypescript, color: "#3178C6" },
+  "Python": { icon: SiPython, color: "#3776AB" },
+  "Arduino": { icon: SiArduino, color: "#00C4CC" },
+  "Git": { icon: SiGit, color: "#F05032" },
+  "GitHub": { icon: SiGithub, color: "#ededed" },
+  "ESP32": { icon: SiEspressif, color: "#E7352C" },
+};
 
 export const etiquetasEstado: Record<string, string> = {
   "prototipo": "Prototipo",

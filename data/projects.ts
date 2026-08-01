@@ -43,7 +43,7 @@ export const proyectos: Proyecto[] = [
     titulo: "Aplicativo Web de Gestión y Control de Pasantías",
     banner: "https://github.com/Samuelelvro6756/Registro-de-Etapa-Productiva/raw/main/docs/Banner.png",
     descripcion: "Sistema web para gestionar estudiantes, pasantías, contratos de aprendizaje, asesorías y evaluaciones desde una única plataforma.",
-    tecnologias: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+    tecnologias: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
     estado: "finalizado",
     tipo: ["software"],
     visibilidad: "publico",

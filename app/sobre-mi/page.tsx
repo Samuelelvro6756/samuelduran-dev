@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Button from "@/components/Button";
+import TechBadge from "@/components/TechBadge";
+
+const habilidadesTecnicas = [
+  "Unity", "C#", "HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "TypeScript", "Python",
+  "Arduino", "ESP32", "Git", "GitHub"
+];
 
 export default function SobreMiPage() {
   return (
@@ -80,9 +86,13 @@ export default function SobreMiPage() {
           stack, diseño de sistemas, integración hardware-software, documentación
           técnica con Git.
         </p>
-        <p className="text-gray-400 mt-2 text-sm">
-          C#, TypeScript, JavaScript, PHP, Python, HTML5, CSS3, MySQL, Unity, Arduino, ESP32
-        </p>
+        <div className="columns-2 sm:columns-3 gap-2 mt-2 w-1/2">
+          {habilidadesTecnicas.map((tech) => (
+            <div key={tech} className="mb-2 break-inside-avoid">
+              <TechBadge nombre={tech} />
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Idiomas */}

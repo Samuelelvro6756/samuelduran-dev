@@ -34,3 +34,55 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
+
+.upc-wrapper {
+  position: relative;
+}
+
+.upc-glow {
+  position: absolute;
+  inset: -3px;
+  border-radius: 0.375rem;
+  background: conic-gradient(
+    from 0deg,
+    red, orange, yellow, lime, cyan, blue, violet, red
+  );
+  filter: blur(10px) hue-rotate(0deg);
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+  animation: upc-spin 3s linear infinite;
+  animation-play-state: paused;
+}
+
+.upc-wrapper:hover .upc-glow {
+  opacity: 0.7;
+  animation-play-state: running;
+}
+
+@keyframes upc-spin {
+  from { filter: blur(10px) hue-rotate(0deg); }
+  to { filter: blur(10px) hue-rotate(360deg); }
+}
+
+.upc-hover:hover {
+  animation: upc-glow 2s ease-in-out infinite;
+}
+
+.upc-wrapper-static {
+  position: relative;
+}
+
+.upc-glow-static {
+  position: absolute;
+  inset: -3px;
+  border-radius: 0.5rem;
+  background: conic-gradient(
+    from 0deg,
+    red, orange, yellow, lime, cyan, blue, violet, red
+  );
+  filter: blur(14px);
+  opacity: 0.55;
+  z-index: 0;
+  animation: upc-spin 4s linear infinite;
+}
