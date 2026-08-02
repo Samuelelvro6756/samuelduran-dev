@@ -59,16 +59,16 @@ export default async function ProyectoDetallePage({ params, }: { params: Promise
       </div>
 
       <div className="mt-8 flex flex-col gap-4">
-        <div className="pb-3">
-          <h2 className="text-sm uppercase text-gray-500 font-semibold">Problema</h2>
+        <div className="border-l-2 border-accent/40 pl-4 pb-3">
+          <h2 className="text-sm uppercase text-accent font-semibold">Problema</h2>
           <p className="text-gray-300 mt-1">{proyecto.impacto.problema}</p>
         </div>
-        <div className="pb-3">
-          <h2 className="text-sm uppercase text-gray-500 font-semibold">Resultado</h2>
+        <div className="border-l-2 border-accent/40 pl-4 pb-3">
+          <h2 className="text-sm uppercase text-accent font-semibold">Resultado</h2>
           <p className="text-gray-300 mt-1">{proyecto.impacto.resultado}</p>
         </div>
-        <div className="pb-3">
-          <h2 className="text-sm uppercase text-gray-500 font-semibold">Aprendizaje</h2>
+        <div className="border-l-2 border-accent/40 pl-4 pb-3">
+          <h2 className="text-sm uppercase text-accent font-semibold">Aprendizaje</h2>
           <p className="text-gray-300 mt-1">{proyecto.impacto.aprendizaje}</p>
         </div>
       </div>
@@ -87,59 +87,66 @@ export default async function ProyectoDetallePage({ params, }: { params: Promise
         
       {proyecto.devHub && (
         <DevHubToggle>
-          {proyecto.devHub.decisionTecnicaClave && (
-            <div className="mb-4">
-              <h3 className="text-sm uppercase text-gray-500 font-semibold">Decisión técnica clave</h3>
-              <p className="text-gray-300 mt-1">{proyecto.devHub.decisionTecnicaClave}</p>
-            </div>
-          )}
-          
-          {proyecto.devHub.arquitectura && (
-            <div className="mb-4 pt-4">
-              <h3 className="text-sm uppercase text-gray-500 font-semibold">Arquitectura</h3>
-              <p className="text-gray-300 mt-1">{proyecto.devHub.arquitectura}</p>
-            </div>
-          )}
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Columna principal */}
+            <div className="md:col-span-2 flex flex-col gap-4">
+              {proyecto.devHub.decisionTecnicaClave && (
+                <div>
+                  <h3 className="text-sm uppercase text-accent font-semibold">Decisión técnica clave</h3>
+                  <p className="text-gray-300 mt-1">{proyecto.devHub.decisionTecnicaClave}</p>
+                </div>
+              )}
 
-          {proyecto.devHub.diagramas && proyecto.devHub.diagramas.length > 0 && (
-            <div className="mb-4 pt-4">
-              <h3 className="text-sm uppercase text-gray-500 font-semibold mb-2">Diagramas</h3>
-              <div className="grid grid-cols-2 gap-2">
-                {proyecto.devHub.diagramas.map((url) => (
-                  <img key={url} src={url} alt="Diagrama" className="rounded" />
-                ))}
-              </div>
-            </div>
-          )}
+              {proyecto.devHub.arquitectura && (
+                <div>
+                  <h3 className="text-sm uppercase text-accent font-semibold">Arquitectura</h3>
+                  <p className="text-gray-300 mt-1">{proyecto.devHub.arquitectura}</p>
+                </div>
+              )}
 
-          {proyecto.devHub.galeria && proyecto.devHub.galeria.length > 0 && (
-            <div className="mb-4 pt-4">
-              <h3 className="text-sm uppercase text-gray-500 font-semibold mb-2">Galería</h3>
-              <div className="grid grid-cols-2 gap-2">
-                {proyecto.devHub.galeria.map((url) => (
-                  <img key={url} src={url} alt="Galería" className="rounded" />
-                ))}
-              </div>
-            </div>
-          )}
+              {proyecto.devHub.diagramas && proyecto.devHub.diagramas.length > 0 && (
+                <div>
+                  <h3 className="text-sm uppercase text-accent font-semibold mb-2">Diagramas</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    {proyecto.devHub.diagramas.map((url) => (
+                      <img key={url} src={url} alt="Diagrama" className="rounded" />
+                    ))}
+                  </div>
+                </div>
+              )}
 
-          {proyecto.devHub.readme && (
-            <div className="mb-4 pt-4">
-              <h3 className="text-sm uppercase text-gray-500 font-semibold mb-2">Read me</h3>
+              {proyecto.devHub.galeria && proyecto.devHub.galeria.length > 0 && (
+                <div>
+                  <h3 className="text-sm uppercase text-accent font-semibold mb-2">Galería</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    {proyecto.devHub.galeria.map((url) => (
+                      <img key={url} src={url} alt="Galería" className="rounded" />
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Columna lateral de recursos */}
+            <div className="flex flex-col gap-2 md:border-l md:border-white/10 md:pl-6">
+              <h3 className="text-sm uppercase text-accent font-semibold mb-1">Recursos</h3>
+
               {proyecto.devHub.readme && (
                 <LinkBadge href={proyecto.devHub.readme} {...iconosEnlace.readme} />
               )}
-            </div>
-          )}
 
-         {proyecto.devHub.descargas && proyecto.devHub.descargas.length > 0 && (
-            <div className="pt-4">
-              <h3 className="text-sm uppercase text-gray-500 font-semibold mb-2">Descargas</h3>
-              {proyecto.devHub.descargas.map((descarga) => (
-                <LinkBadge key={descarga.url} href={descarga.url} icon={iconosEnlace.descarga.icon} color={iconosEnlace.descarga.color} label={descarga.nombre} />
-              ))}
+              {proyecto.devHub.descargas && proyecto.devHub.descargas.length > 0 &&
+                proyecto.devHub.descargas.map((descarga) => (
+                  <LinkBadge
+                    key={descarga.url}
+                    href={descarga.url}
+                    icon={iconosEnlace.descarga.icon}
+                    color={iconosEnlace.descarga.color}
+                    label={descarga.nombre}
+                  />
+                ))}
             </div>
-          )}
+          </div>
         </DevHubToggle>
       )}
     </main>

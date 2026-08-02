@@ -1,9 +1,12 @@
 "use client";
 
 import Button from "@/components/Button";
+import EmailButton from "@/components/EmailButton";
+import LinkBadge from "@/components/LinkBadge";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactoSchema, ContactoFormData } from "@/lib/validaciones";
+import { iconosEnlace } from "@/lib/labels";
 import { useState } from "react";
 
 export default function ContactoPage() {
@@ -41,36 +44,24 @@ export default function ContactoPage() {
     <main className="p-8 max-w-4xl mx-auto">
       <h1 className="text-2xl font-semibold mb-8">Contacto</h1>
 
-      <div className="grid md:grid-cols-3 gap-16">
+      <div className="grid md:grid-cols-3 gap-6 md:gap-16">
         {/* Columna de enlaces directos */}
         <div className="flex flex-col gap-3">
-          <a href="mailto:samuelducar1998@gmail.com" className="text-sm underline">
-            Email
-          </a>
-          <a
-            href="https://github.com/Samuelelvro6756"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm underline"
-          >
-            GitHub
-          </a>
-          <a
+          <EmailButton />
+          <LinkBadge
+          href="https://github.com/Samuelelvro6756"
+          {...iconosEnlace.github}
+          />
+          <LinkBadge
             href="https://www.linkedin.com/in/samuel-duran-cardenas-077675420/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm underline"
-          >
-            LinkedIn
-          </a>
-          <a
+            {...iconosEnlace.linkedin}
+          />
+          <LinkBadge
             href="https://wa.me/573216477435"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm underline"
-          >
-            WhatsApp
-          </a>
+            {...iconosEnlace.whatsapp}
+          />
+
+          <hr className="border-accent/40 border-t-2 my-4 md:hidden blink" />
         </div>
 
         {/* Columna del formulario */}

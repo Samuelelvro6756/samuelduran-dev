@@ -1,5 +1,6 @@
 import { CheckCircle2, Loader2, FlaskConical, PauseCircle, Search, Rocket, LucideIcon } from "lucide-react";
 import { Code2, Gamepad2, HeartHandshake, Cpu, Lock, Beaker } from "lucide-react";
+
 import { SiUnity, SiPhp, SiMysql, SiHtml5, SiCss, SiCplusplus, SiJavascript, SiTypescript, SiPython, SiArduino, SiGit, SiGithub, SiEspressif, SiDotnet} from "react-icons/si";
 import { SiWhatsapp, SiGmail, SiItchdotio } from "react-icons/si";
 import { FileText, Download, Link2 } from "lucide-react";

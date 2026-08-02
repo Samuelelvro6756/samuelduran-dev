@@ -1,10 +1,16 @@
 import Image from "next/image";
 import Button from "@/components/Button";
 import TechBadge from "@/components/TechBadge";
+import { BookOpen, GraduationCap, Wrench, Sparkles, Code, Globe } from "lucide-react";
 
 const habilidadesTecnicas = [
   "Unity", "C#", "HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "TypeScript", "Python", "Java (Swing)",
   "Arduino", "ESP32", "Git", "GitHub"
+];
+
+const idiomas = [
+  { nombre: "Español", nivel: "Nativo", porcentaje: 100 },
+  { nombre: "Inglés", nivel: "B1", porcentaje: 55 },
 ];
 
 export default function SobreMiPage() {
@@ -37,7 +43,10 @@ export default function SobreMiPage() {
 
       {/* Historia */}
       <section className="mt-12">
-        <h2 className="text-sm uppercase text-gray-500 font-semibold">Historia</h2>
+        <h2 className="flex items-center gap-2 text-sm uppercase text-accent font-semibold">
+          <BookOpen size={16} />
+          Historia
+        </h2>
         <p className="text-gray-300 mt-2">
           Desarrollador de software con experiencia práctica en desarrollo web,
           videojuegos y sistemas embebidos. Me interesa construir productos
@@ -49,8 +58,12 @@ export default function SobreMiPage() {
 
       {/* Formación */}
       <section className="mt-8">
-        <h2 className="text-sm uppercase text-gray-500 font-semibold">Formación</h2>
-        <ul className="text-gray-300 mt-2 flex flex-col gap-1">
+        <h2 className="flex items-center gap-2 text-sm uppercase text-accent font-semibold">
+          <GraduationCap
+           size={16} />
+          Formación
+        </h2>
+        <ul className="text-gray-300 mt-2 list-disc list-inside marker:text-accent space-y-1">
           <li>Ingeniería de Software — Escuela de Administración y Mercadotecnia (EAM), en curso</li>
           <li>Técnico en Desarrollo de Software — Politécnico Master Web</li>
           <li>Técnico en Sistemas Tele-informáticos — SENA / I. Tecnológico de Calarcá</li>
@@ -59,7 +72,10 @@ export default function SobreMiPage() {
 
       {/* Cómo trabajo */}
       <section className="mt-8">
-        <h2 className="text-sm uppercase text-gray-500 font-semibold">Cómo trabajo</h2>
+        <h2 className="flex items-center gap-2 text-sm uppercase text-accent font-semibold">
+          <Wrench size={16} />
+          Cómo trabajo
+        </h2>
         <p className="text-gray-300 mt-2">
           Prefiero entender el porqué de una decisión técnica antes que la solución
           más rápida. Priorizo código mantenible y arquitectura clara, incluso si
@@ -69,8 +85,11 @@ export default function SobreMiPage() {
 
       {/* Intereses */}
       <section className="mt-8">
-        <h2 className="text-sm uppercase text-gray-500 font-semibold">Intereses</h2>
-        <ul className="text-gray-300 mt-2 flex flex-col gap-1">
+        <h2 className="flex items-center gap-2 text-sm uppercase text-accent font-semibold">
+          <Sparkles size={16} />
+          Intereses
+        </h2>
+        <ul className="text-gray-300 mt-2 list-disc list-inside marker:text-accent space-y-1">
           <li>Inteligencia Artificial y Machine Learning</li>
           <li>Realidad Virtual y Aumentada</li>
           <li>Seguridad informática y hacking ético</li>
@@ -80,7 +99,10 @@ export default function SobreMiPage() {
 
       {/* Habilidades técnicas */}
       <section className="mt-8">
-        <h2 className="text-sm uppercase text-gray-500 font-semibold">Habilidades técnicas</h2>
+        <h2 className="flex items-center gap-2 text-sm uppercase text-accent font-semibold">
+          <Code size={16} />
+          Habilidades técnicas
+        </h2>
         <p className="text-gray-300 mt-2">
           Arquitectura de software, programación orientada a objetos, desarrollo full
           stack, diseño de sistemas, integración hardware-software, documentación
@@ -97,8 +119,26 @@ export default function SobreMiPage() {
 
       {/* Idiomas */}
       <section className="mt-8">
-        <h2 className="text-sm uppercase text-gray-500 font-semibold">Idiomas</h2>
-        <p className="text-gray-300 mt-2">Español (nativo) · Inglés (B1)</p>
+        <h2 className="flex items-center gap-2 text-sm uppercase text-accent font-semibold">
+          <Globe size={16} />
+          Idiomas
+        </h2>
+        <div className="flex flex-col gap-3 mt-2">
+          {idiomas.map((idioma) => (
+            <div key={idioma.nombre}>
+              <div className="flex justify-between text-sm mb-1">
+                <span className="text-gray-300">{idioma.nombre}</span>
+                <span className="text-muted">{idioma.nivel}</span>
+              </div>
+              <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-accent rounded-full"
+                  style={{ width: `${idioma.porcentaje}%` }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </main>
   );

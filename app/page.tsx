@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import { proyectos } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import Button from "@/components/Button";
@@ -45,8 +46,12 @@ export default function Home() {
           ))}
         </div>
         <div className="text-center mt-8">
-          <Link href="/proyectos" className="text-sm underline">
+          <Link
+            href="/proyectos"
+            className="inline-flex items-center gap-1 text-sm text-accent hover:text-accent-soft transition-colors"
+          >
             Ver todos los proyectos
+            <ArrowRight size={16} />
           </Link>
         </div>
       </section>
