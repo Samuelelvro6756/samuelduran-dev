@@ -80,7 +80,7 @@ export const proyectos: Proyecto[] = [
     visibilidad: "parcial",
     enlaces: 
     {
-
+      // Proximamente
     },
     impacto: 
     {

@@ -1,7 +1,21 @@
 import { CheckCircle2, Loader2, FlaskConical, PauseCircle, Search, Rocket, LucideIcon } from "lucide-react";
 import { Code2, Gamepad2, HeartHandshake, Cpu, Lock, Beaker } from "lucide-react";
 import { SiUnity, SiPhp, SiMysql, SiHtml5, SiCss, SiCplusplus, SiJavascript, SiTypescript, SiPython, SiArduino, SiGit, SiGithub, SiEspressif, SiDotnet} from "react-icons/si";
+import { SiWhatsapp, SiGmail, SiItchdotio } from "react-icons/si";
+import { FileText, Download, Link2 } from "lucide-react";
+import { FaJava, FaLinkedin } from "react-icons/fa";
 import { IconType } from "react-icons";
+
+export const iconosEnlace = {
+  github: { icon: SiGithub, color: "#ededed", label: "GitHub" },
+  linkedin: { icon: FaLinkedin, color: "#0A66C2", label: "LinkedIn" },
+  whatsapp: { icon: SiWhatsapp, color: "#25D366", label: "WhatsApp" },
+  email: { icon: SiGmail, color: "#EA4335", label: "Email" },
+  itch: { icon: SiItchdotio, color: "#FA5C5C", label: "Itch.io" },
+  demo: { icon: Link2, color: "#569cd6", label: "Demo" },
+  readme: { icon: FileText, color: "#569cd6", label: "README" },
+  descarga: { icon: Download, color: "#569cd6", label: "Descarga" },
+};
 
 export const iconosTecnologia: Record<string, { icon: IconType; color: string }> = {
   "Unity": { icon: SiUnity, color: "#FFFFFF" },
@@ -15,6 +29,7 @@ export const iconosTecnologia: Record<string, { icon: IconType; color: string }>
   "JavaScript": { icon: SiJavascript, color: "#F7DF1E" },
   "TypeScript": { icon: SiTypescript, color: "#3178C6" },
   "Python": { icon: SiPython, color: "#3776AB" },
+  "Java (Swing)": { icon: FaJava, color: "#ED8B00" },
   "Arduino": { icon: SiArduino, color: "#00C4CC" },
   "Git": { icon: SiGit, color: "#F05032" },
   "GitHub": { icon: SiGithub, color: "#ededed" },

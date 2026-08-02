@@ -3,7 +3,7 @@ import Button from "@/components/Button";
 import TechBadge from "@/components/TechBadge";
 
 const habilidadesTecnicas = [
-  "Unity", "C#", "HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "TypeScript", "Python",
+  "Unity", "C#", "HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "TypeScript", "Python", "Java (Swing)",
   "Arduino", "ESP32", "Git", "GitHub"
 ];
 

@@ -2,9 +2,10 @@ import Image from "next/image"
 import DevHubToggle from "@/components/DevHubToggle";
 import Badge from "@/components/Badge";
 import TechBadge from "@/components/TechBadge";
+import LinkBadge from "@/components/LinkBadge";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { etiquetasEstado, etiquetasTipo, coloresEstado, iconosEstado, iconosTipo } from "@/lib/labels";
+import { etiquetasEstado, etiquetasTipo, coloresEstado, iconosEstado, iconosTipo, iconosEnlace } from "@/lib/labels";
 import { generarSlug } from "@/lib/slug";
 import { proyectos } from "@/data/projects";
 
@@ -74,19 +75,13 @@ export default async function ProyectoDetallePage({ params, }: { params: Promise
 
       <div className="mt-8 flex gap-4">
         {proyecto.enlaces.github && (
-          <a href={proyecto.enlaces.github} target="_blank" rel="noopener noreferrer" className="text-sm underline">
-            GitHub
-          </a>
+          <LinkBadge href={proyecto.enlaces.github} {...iconosEnlace.github} />
         )}
         {proyecto.enlaces.demo && (
-          <a href={proyecto.enlaces.demo} target="_blank" rel="noopener noreferrer" className="text-sm underline">
-            Demo
-          </a>
+          <LinkBadge href={proyecto.enlaces.demo} {...iconosEnlace.demo} />
         )}
         {proyecto.enlaces.itch && (
-          <a href={proyecto.enlaces.itch} target="_blank" rel="noopener noreferrer" className="text-sm underline">
-            Itch.io
-          </a>
+          <LinkBadge href={proyecto.enlaces.itch} {...iconosEnlace.itch} />
         )}
       </div>
         
@@ -131,22 +126,18 @@ export default async function ProyectoDetallePage({ params, }: { params: Promise
           {proyecto.devHub.readme && (
             <div className="mb-4 pt-4">
               <h3 className="text-sm uppercase text-gray-500 font-semibold mb-2">Read me</h3>
-              <a href={proyecto.devHub.readme} target="_blank" rel="noopener noreferrer" className="text-sm underline block">
-                README.md
-              </a>
+              {proyecto.devHub.readme && (
+                <LinkBadge href={proyecto.devHub.readme} {...iconosEnlace.readme} />
+              )}
             </div>
           )}
 
-         {proyecto.devHub?.descargas && proyecto.devHub.descargas.length > 0 && (
-            <div className="mt-4 pt-4">
+         {proyecto.devHub.descargas && proyecto.devHub.descargas.length > 0 && (
+            <div className="pt-4">
               <h3 className="text-sm uppercase text-gray-500 font-semibold mb-2">Descargas</h3>
-              <div className="flex flex-col gap-1">
-                {proyecto.devHub.descargas.map((descarga) => (
-                  <a key={descarga.url} href={descarga.url} target="_blank" rel="noopener noreferrer" className="text-sm underline">
-                    {descarga.nombre}
-                  </a>
-                ))}
-              </div>
+              {proyecto.devHub.descargas.map((descarga) => (
+                <LinkBadge key={descarga.url} href={descarga.url} icon={iconosEnlace.descarga.icon} color={iconosEnlace.descarga.color} label={descarga.nombre} />
+              ))}
             </div>
           )}
         </DevHubToggle>
