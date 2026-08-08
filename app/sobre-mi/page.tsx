@@ -13,6 +13,11 @@ const idiomas = [
   { nombre: "Inglés", nivel: "B1", porcentaje: 55 },
 ];
 
+export const metadata = {
+  title: "Sobre mí — Samuel Durán",
+  description: "Conoce a Samuel Durán, desarrollador de software especializado en arquitectura escalable y desarrollo full stack.",
+};
+
 export default function SobreMiPage() {
   return (
     <main className="p-8 max-w-4xl mx-auto">

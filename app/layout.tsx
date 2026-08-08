@@ -17,6 +17,20 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Samuel Durán — Desarrollador de Software",
   description: "Portafolio de Samuel Durán: proyectos, arquitectura y desarrollo.",
+  openGraph: {
+    title: "Samuel Durán — Desarrollador de Software",
+    description: "Portafolio de Samuel Durán: proyectos, arquitectura y desarrollo.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Samuel Durán — Desarrollador de Software",
+      },
+    ],
+    locale: "es_CO",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

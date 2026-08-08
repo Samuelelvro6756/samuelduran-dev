@@ -1,6 +1,11 @@
 import { proyectos } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 
+export const metadata = {
+  title: "Proyectos — Samuel Durán",
+  description: "Portafolio de proyectos de Samuel Durán: desarrollo web, videojuegos, hardware e innovación social.",
+};
+
 export default function Projects() {
   return (
     <main className="p-8">

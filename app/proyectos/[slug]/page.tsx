@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import DevHubToggle from "@/components/DevHubToggle";
 import Badge from "@/components/Badge";
 import TechBadge from "@/components/TechBadge";
@@ -8,6 +9,22 @@ import { ArrowLeft } from "lucide-react";
 import { etiquetasEstado, etiquetasTipo, coloresEstado, iconosEstado, iconosTipo, iconosEnlace } from "@/lib/labels";
 import { generarSlug } from "@/lib/slug";
 import { proyectos } from "@/data/projects";
+
+export async function generateMetadata({ params }: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const proyecto = proyectos.find((p) => generarSlug(p.titulo) === slug);
+
+  if (!proyecto) {
+    return { title: "Proyecto no encontrado — Samuel Durán" };
+  }
+
+  return {
+    title: `${proyecto.titulo} — Samuel Durán`,
+    description: proyecto.descripcion,
+  };
+}
 
 export default async function ProyectoDetallePage({ params, }: { params: Promise<{ slug: string }>; }) {
   const { slug } = await params;
