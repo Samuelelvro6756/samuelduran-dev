@@ -4,6 +4,7 @@ import DevHubToggle from "@/components/DevHubToggle";
 import Badge from "@/components/Badge";
 import TechBadge from "@/components/TechBadge";
 import LinkBadge from "@/components/LinkBadge";
+import ZoomableImage from "@/components/ZoomableImage";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { etiquetasEstado, etiquetasTipo, coloresEstado, iconosEstado, iconosTipo, iconosEnlace } from "@/lib/labels";
@@ -126,7 +127,7 @@ export default async function ProyectoDetallePage({ params, }: { params: Promise
                   <h3 className="text-sm uppercase text-accent font-semibold mb-2">Diagramas</h3>
                   <div className="grid grid-cols-2 gap-2">
                     {proyecto.devHub.diagramas.map((url) => (
-                      <img key={url} src={url} alt="Diagrama" className="rounded" />
+                      <ZoomableImage key={url} src={url} alt="Diagrama" />
                     ))}
                   </div>
                 </div>
@@ -137,7 +138,7 @@ export default async function ProyectoDetallePage({ params, }: { params: Promise
                   <h3 className="text-sm uppercase text-accent font-semibold mb-2">Galería</h3>
                   <div className="grid grid-cols-2 gap-2">
                     {proyecto.devHub.galeria.map((url) => (
-                      <img key={url} src={url} alt="Galería" className="rounded" />
+                      <ZoomableImage key={url} src={url} alt="Galería" />
                     ))}
                   </div>
                 </div>
